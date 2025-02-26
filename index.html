@@ -6,67 +6,105 @@
     <title>Free Fire APKs - RapidFire Corporation</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            background-color: #1e1e1e;
-            color: #ffd700;
+            background: url('https://source.unsplash.com/1600x900/?crystals,abstract') no-repeat center center/cover;
+            background-color: #f0f4f8;
+            color: #333;
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
         h1 {
-            font-size: 2.8em;
+            font-size: 3em;
             margin-top: 20px;
+            color: #6a0dad;
         }
         .apk-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-top: 30px;
         }
         .apk-button {
-            display: inline-block;
-            margin: 15px;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #ffd700, #e5c100);
-            color: #1e1e1e;
+            width: 80%;
+            max-width: 400px;
+            margin: 10px 0;
+            padding: 15px;
+            background: #6a0dad;
+            color: white;
             text-decoration: none;
             font-size: 1.2em;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: bold;
-            transition: 0.3s;
+            transition: transform 0.3s ease, background 0.3s;
             border: none;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(106, 13, 173, 0.5);
         }
         .apk-button:hover {
-            background: linear-gradient(135deg, #e5c100, #b89b00);
+            background: #5a0ca8;
+            transform: scale(1.07);
         }
         .coming-soon {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: #d1a800;
+            opacity: 0.6;
+            cursor: not-allowed;
+            background: #bbb;
+            box-shadow: 0 4px 10px rgba(150, 150, 150, 0.5);
         }
         .footer {
             margin-top: 50px;
             padding: 20px;
-            background-color: #161616;
-            color: #ffd700;
+            background: rgba(255, 255, 255, 0.8);
+            color: #212529;
             font-size: 1em;
+            font-weight: 500;
+            border-top: 2px solid #adb5bd;
+        }
+        /* Particle Effect */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         function downloadAPK(link) {
             if (link === "#") {
-                alert("Available Soon");
+                alert("Coming Soon!");
             } else {
                 window.location.href = link;
             }
         }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 100 },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5 },
+                    size: { value: 3 },
+                    move: { speed: 2 }
+                }
+            });
+        });
     </script>
 </head>
 <body>
+    <div id="particles-js"></div>
     <h1>RAPIDFIRE CORPORATION</h1>
     <div class="apk-container">
-        <button class="apk-button" onclick="downloadAPK('https://cdn.discordapp.com/attachments/1238143120093347952/1344167456868008037/Free_Fire_Playstore_RAPIDFIRE_CORP.xapk?ex=67bfecff&is=67be9b7f&hm=99b042c8d3576720a2d073262d604e4198d5c27d468883fb66d6644e7d38da3a&')">Download Free Fire (Play Store)</button>
-        <button class="apk-button" onclick="downloadAPK('https://cdn.discordapp.com/attachments/1238143120093347952/1344167300680515685/FreeFire_Amazon_RapidFire-Corp.apk?ex=67bfecd9&is=67be9b59&hm=90c8dadc65aab072b97b8dee826a4cb3ba70c592ad86bc4d9855d6deaac2dfe4&')">Download Free Fire (Amazon)</button>
-        <button class="apk-button" onclick="downloadAPK('#')">Free Fire Combo - Available Soon</button>
-        <button class="apk-button" onclick="downloadAPK('#')">Free Fire 32Bit - Available Soon</button>
+        <button class="apk-button" onclick="downloadAPK('https://cdn.discordapp.com/attachments/1238143120093347952/1344167456868008037/Free_Fire_Playstore_RAPIDFIRE_CORP.xapk')">Download Free Fire (Play Store)</button>
+        <button class="apk-button" onclick="downloadAPK('https://cdn.discordapp.com/attachments/1238143120093347952/1344167300680515685/FreeFire_Amazon_RapidFire-Corp.apk')">Download Free Fire (Amazon)</button>
+        <button class="apk-button coming-soon" onclick="downloadAPK('#')">Free Fire Combo - Coming Soon</button>
+        <button class="apk-button coming-soon" onclick="downloadAPK('#')">Free Fire 32Bit - Coming Soon</button>
     </div>
     <div class="footer">© 2025 RapidFire Corporation. All Rights Reserved.</div>
 </body>
